@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public class DipendenteService {
     @Autowired
     private Cloudinary cloudinaryUploader;
-    @Autowired
-    private DipendenteService dipendenteService;
+//    @Autowired
+//    private DipendenteService dipendenteService;
 }

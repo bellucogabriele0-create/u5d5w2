@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "prenotazioni")
@@ -13,14 +14,16 @@ import java.time.LocalDate;
 @ToString
 public class Prenotazione {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "prenotazioniId")
     @Setter(AccessLevel.NONE)
-    private Long PrenotazioniId;
+    private UUID PrenotazioniId;
     @Column(nullable = false)
     private LocalDate dataRichiesta;
     @Column(nullable = false)
     private String notePreferenze;
+    @Column
+    private Boolean StatoViaggio = null;
     @ManyToOne
     @JoinColumn(name = "viaggio_id")
     private Viaggio viaggio;

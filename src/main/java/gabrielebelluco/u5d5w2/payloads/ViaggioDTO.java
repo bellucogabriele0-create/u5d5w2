@@ -10,6 +10,12 @@ public record ViaggioDTO(
         @Size(max = 100, min = 1, message = "il viaggio deve avere una destinazione di massimo 100 caratteri")
         String destinazione,
         @NotBlank(message = "")
-        LocalDate data
+        LocalDate data,
+        boolean completato
+
 ) {
+    public String getStato() {
+        return this.completato ? "COMPLETATO" : "IN_PROGRAMMA";
+    }
+
 }

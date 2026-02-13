@@ -16,6 +16,9 @@ public record DipendenteDTO(
         String cognome,
         @NotBlank(message = "il dipendente deve avere un Email")
         @Email(message = "l'email non è valida ")
-        String email
+        String email,
+        @NotBlank(message = "il dipendente deve avere un immagine")
+        String immagineDip
+
 ) {
 }
